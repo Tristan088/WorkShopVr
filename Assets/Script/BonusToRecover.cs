@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BonusToRecover : MonoBehaviour
 {
-    [Range(0, 100)]
+    [Range(0, 1)]
     public float rangeX;
-    [Range(0, 100)]
+    [Range(0, 1)]
     public float rangeY;
 
-    [Range(1,10)]
-    public float speed = 1;
+    [Range(0.01f,5)]
+    public float speed = 0.01f;
     private GameObject Player;
 
     private Vector3 positionToReach;
@@ -29,7 +29,6 @@ public class BonusToRecover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        transform.position += direction * (1/speed) * Time.deltaTime ;
+        transform.position += direction * (speed) * Time.deltaTime ;
     }
 }
