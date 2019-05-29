@@ -24,6 +24,7 @@ public class GetBonus : MonoBehaviour
         }
     }
 
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(positionBaseToCatch, catchRadius);
