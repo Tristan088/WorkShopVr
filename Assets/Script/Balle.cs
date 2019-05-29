@@ -8,6 +8,7 @@ public class Balle : MonoBehaviour
     private Rigidbody _rb;
     public float _speed;
     private bool _isMoving = false;
+    private Vector3 _startPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,18 @@ public class Balle : MonoBehaviour
             _isMoving = true;
             transform.rotation = collision.transform.rotation;
             _rb.AddForce(transform.up * _speed);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name == "DeadZone")
+        {
+            WordSettings.Instance.hpPlayer--;
+            
+            transform.position = _startPosition;
+            _rb.velocity = Vector3.zero;
+            _isMoving = false;
         }
     }
 }
