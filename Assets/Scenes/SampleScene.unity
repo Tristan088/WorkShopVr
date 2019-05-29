@@ -202,6 +202,7 @@ MonoBehaviour:
   range: 100
   shoot: shoot
   LazerGun: {fileID: 2018901678}
+  flash: {fileID: 0}
 --- !u!4 &500851434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4742026642004554097, guid: f698ad5be72f6044a973b443160f6301,
@@ -303,7 +304,7 @@ GameObject:
   - component: {fileID: 553431152}
   - component: {fileID: 553431151}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: mur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
