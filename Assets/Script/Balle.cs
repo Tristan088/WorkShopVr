@@ -13,7 +13,7 @@ public class Balle : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        
+        _startPosition = transform.position;
     }
 
     // Update is called once per frame
