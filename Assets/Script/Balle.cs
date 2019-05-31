@@ -29,6 +29,12 @@ public class Balle : MonoBehaviour
             transform.rotation = collision.transform.rotation;
             _rb.AddForce(transform.up * _speed);
         }
+
+        brique br = collision.gameObject.GetComponent<brique>();
+        if(br)
+        {
+            br.TakeDamage(10);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

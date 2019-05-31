@@ -4,7 +4,9 @@ using System.Collections;
 
 public class brique : MonoBehaviour
 {
-    public int HP;                                  
+    public int HP;
+
+
 
     public void TakeDamage(int amount)
     {
