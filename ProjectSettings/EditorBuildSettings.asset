@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/playscene.unity
-    guid: b1f9c69c4b79bc24c9eb5f5711b68507
+    path: Assets/Scenes/MainMenu.unity
+    guid: 377a6aa8ad57fb54bb595204da2ef969
   - enabled: 1
-    path: Assets/creditsscene.unity
-    guid: 1f2f0f88302595a42b97542810054d90
+    path: Assets/Scenes/MenuLoose.unity
+    guid: 6b17eded4c457ad4e9cd45029f1977aa
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 1e8db71d9df07164dba1b7aa854f5fee
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 03c161948ec7e4e46bd39dffb15f10e1
   m_configObjects: {}
