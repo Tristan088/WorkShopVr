@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 03c161948ec7e4e46bd39dffb15f10e1
+  - enabled: 1
+    path: Assets/Scenes/Tristan.unity
+    guid: ba0084bbe158cdb408eececcb4ea6311
   m_configObjects: {}
