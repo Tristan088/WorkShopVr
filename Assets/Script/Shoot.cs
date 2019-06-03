@@ -12,7 +12,13 @@ public class Shoot : MonoBehaviour
 
     public string shoot;
     
-    public GameObject foreuse;
+    public Foreuse foreuse;
+
+    public ParticleSystem DrillFireShot;
+        
+
+    public GameObject DrillShotPoint;    
+    
 
 
     // Start is called before the first frame update
@@ -32,11 +38,17 @@ public class Shoot : MonoBehaviour
         {
             Debug.Log("CAAAA MAAAAARCHEEEEE!!");
 
-            foreuse.GetComponent<Rigidbody>().velocity = transform.forward * speed * Time.deltaTime;
+            foreuse.GetComponent<Rigidbody>().velocity = transform.forward * speed ;
 
-            foreuse.GetComponent<Foreuse>().speedRotation = newRotation;
+            foreuse.speedRotation = newRotation;
+            foreuse.SmokeForeuse.Play();
+
             foreuse.transform.SetParent(null);
+            DrillFireShot.Play();
+
             Destroy(gameObject, destroyDelay);
+
+           
         }
         
     }

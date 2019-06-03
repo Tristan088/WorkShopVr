@@ -9,6 +9,8 @@ public class Shootlazer : MonoBehaviour
 
     public string shoot;
 
+    private bool Atire = false;
+
     public GameObject LazerGun;
 
     public ParticleSystem Lazer;
@@ -16,18 +18,34 @@ public class Shootlazer : MonoBehaviour
     public ParticleSystem Lazer1;
     public Transform LazerPoint1;
 
+    public float destroyDelay;
+
+    public int Munition = 5;
+
 
     void Update()
     {
         
-        shooter = Input.GetAxis(shoot);
+        shooter = Input.GetAxisRaw(shoot);
 
-        if (shooter > 0.5f)
+        if ((shooter > 0.5f) && (Atire == false))
         {
+            Atire = true;
+            Munition--;
             Debug.Log("CAAAA TIIIIIRRE!!");
             IsShoot();
              Lazer.Play();
              Lazer1.Play();
+
+            if (Munition <= 0) 
+            {
+                Destroy(gameObject,destroyDelay);
+            }
+        }
+
+        if ((Atire == true) && (shooter < 0.5f))
+        {
+            Atire = false;
         }
     }
 
