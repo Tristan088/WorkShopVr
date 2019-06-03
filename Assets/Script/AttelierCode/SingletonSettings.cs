@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SingletonSettings<TSingletonType> : ScriptableObject
     where TSingletonType : ScriptableObject
-{
+{ 
     
 
     private static TSingletonType _instance = null;

@@ -35,13 +35,13 @@ public class MoveRacket : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.Rotate(5f, 0f, 0f); 
+            transform.Rotate(0f, 5f, 0f); 
         }
 
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.Rotate(-5f, 0f, 0f);
+            transform.Rotate(0f, -5f, 0f);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
