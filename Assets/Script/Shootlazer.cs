@@ -5,23 +5,29 @@ using UnityEngine;
 public class Shootlazer : MonoBehaviour
 {
     private float shooter;
-    public float range = 100f;
+    public float range = 1000f;
 
     public string shoot;
 
     public GameObject LazerGun;
 
-    public ParticleSystem flash;
+    public ParticleSystem Lazer;
+    public Transform LazerPoint;
+    public ParticleSystem Lazer1;
+    public Transform LazerPoint1;
 
-    
+
     void Update()
     {
+        
         shooter = Input.GetAxis(shoot);
 
         if (shooter > 0.5f)
         {
             Debug.Log("CAAAA TIIIIIRRE!!");
             IsShoot();
+             Lazer.Play();
+             Lazer1.Play();
         }
     }
 
