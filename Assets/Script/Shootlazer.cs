@@ -34,8 +34,8 @@ public class Shootlazer : MonoBehaviour
             Munition--;
             Debug.Log("CAAAA TIIIIIRRE!!");
             IsShoot();
-             Lazer.Play();
-             Lazer1.Play();
+            Lazer.Play();
+            Lazer1.Play();
 
             if (Munition <= 0) 
             {
@@ -51,7 +51,6 @@ public class Shootlazer : MonoBehaviour
 
     private void IsShoot()
     {
-
         //flash.Play();
         RaycastHit hit;
        if (Physics.Raycast(LazerGun.transform.position, LazerGun.transform.forward, out hit , range))
