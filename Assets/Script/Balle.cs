@@ -27,7 +27,7 @@ public class Balle : MonoBehaviour
         {
             _isMoving = true;
             transform.rotation = collision.transform.rotation;
-            _rb.AddForce(transform.up * _speed);
+            _rb.AddForce(transform.right * _speed);
         }
 
         brique br = collision.gameObject.GetComponent<brique>();
@@ -41,11 +41,15 @@ public class Balle : MonoBehaviour
     {
         if(other.name == "DeadZone")
         {
-            WordSettings.Instance.hpPlayer--;
-            
+            WordSettings.Instance.hpPlayer--; 
             transform.position = _startPosition;
             _rb.velocity = Vector3.zero;
             _isMoving = false;
+
+            if(WordSettings.Instance.hpPlayer<=0)
+            {
+                WordSettings.Instance.GameOver();
+            }
         }
     }
 }

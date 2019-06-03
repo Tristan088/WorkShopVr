@@ -25,8 +25,21 @@ public class WordSettings : SingletonSettings<WordSettings>
 
     public void CheckBrique()
     {
-        brique[] br = FindObjectsOfType<brique>();
+        brique[] br = GameObject.FindObjectsOfType<brique>();
         nbBriqueTot = br.Length;
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(sceneName: "MenuLoose");
+    }
+
+    public void CheckWin()
+    {
+        if (nbBriqueBrake == nbBriqueTot)
+        {
+            SceneManager.LoadScene(sceneName: "MenuWin");
+        }
     }
 
     public void Awake()
