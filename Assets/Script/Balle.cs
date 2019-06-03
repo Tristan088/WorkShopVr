@@ -13,7 +13,7 @@ public class Balle : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        
+        _startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -28,6 +28,12 @@ public class Balle : MonoBehaviour
             _isMoving = true;
             transform.rotation = collision.transform.rotation;
             _rb.AddForce(transform.up * _speed);
+        }
+
+        brique br = collision.gameObject.GetComponent<brique>();
+        if(br)
+        {
+            br.TakeDamage(10);
         }
     }
 
