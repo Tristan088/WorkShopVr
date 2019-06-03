@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BonusType { WEAPON, RACKET, BALL};
+
 public class BonusToRecover : MonoBehaviour
 {
+
+    public BonusType type;
     [Range(0, 1)]
     public float rangeX;
     [Range(0, 1)]

@@ -16,9 +16,23 @@ public class GetBonus : MonoBehaviour
         Collider[] objectsInRange = Physics.OverlapSphere(positionBaseToCatch, catchRadius, bonusLayerMask);
         if (objectsInRange.Length>0)
         {
-            Debug.Log("P");
             foreach(Collider obj in objectsInRange)
             {
+                
+                switch(obj.GetComponent<BonusToRecover>().type)
+                {
+                    case BonusType.WEAPON:
+                        obj.GetComponent<BonusWeapon>().Active();
+                        break;
+                    case BonusType.RACKET:
+                        obj.GetComponent<BonusRacket>().Active();
+                        break;
+                    case BonusType.BALL:
+                        obj.GetComponent<BonusBall>().Active();
+                        break;
+                    default:
+                        break;
+                }
                 Destroy(obj.gameObject);
             }
         }

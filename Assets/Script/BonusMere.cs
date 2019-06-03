@@ -9,12 +9,12 @@ public class BonusMere : MonoBehaviour
     protected float timerLeft;
 
 
-    public void ActiveBonus()
+    public virtual void ActiveBonus()
     {
-
+        
     }
 
-    public void ShootBonus()
+    public virtual void ShootBonus()
     {
         if(--ammos<=0)
         {
@@ -23,8 +23,25 @@ public class BonusMere : MonoBehaviour
         
     }
 
-    public void GetRaketBack()
+    public virtual void Active()
+    {
+        Debug.Log("BONUS MERE :  Active Bonus");
+    }
+
+    public virtual void GetRaketBack()
     {
         
     }
+}
+
+
+
+public class BonusRacket : BonusMere
+{
+
+}
+
+public class BonusBall : BonusMere
+{
+
 }
